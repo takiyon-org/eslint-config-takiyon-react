@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-takiyon-react",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Takiyon's linting rules for React",
   "main": "index.js",
   "scripts": {
@@ -34,6 +34,6 @@
   },
   "dependencies": {
     "eslint-config-airbnb": "^15.1.0",
-    "eslint-config-takiyon": "^0.1.0"
+    "eslint-config-takiyon": "^0.2.0"
   }
 }
