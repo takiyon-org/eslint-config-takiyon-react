@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-takiyon-react",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "Takiyon's linting rules for React",
   "main": "index.js",
   "scripts": {
