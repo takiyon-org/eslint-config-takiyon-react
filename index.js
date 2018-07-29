@@ -4,6 +4,7 @@ module.exports = {
         'takiyon',
     ],
     rules: {
+        'jsx-a11y/label-has-for': 'off',
         'react/jsx-filename-extension': 'off',
         'react/jsx-indent': ['error', 4],
         'react/jsx-indent-props' : ['error', 4],
