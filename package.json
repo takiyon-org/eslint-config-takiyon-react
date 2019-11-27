@@ -21,19 +21,19 @@
   },
   "homepage": "https://github.com/takiyon-org/eslint-config-takiyon-react#readme",
   "peerDependencies": {
-    "eslint": "^5.2.0",
+    "eslint": "^6.7.1",
     "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-jsx-a11y": "^6.0.2",
     "eslint-plugin-react": "^7.1.0"
   },
   "devDependencies": {
-    "eslint": "^5.2.0",
+    "eslint": "^6.7.1",
     "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-jsx-a11y": "^6.0.2",
     "eslint-plugin-react": "^7.1.0"
   },
   "dependencies": {
-    "eslint-config-airbnb": "^17.0.0",
-    "eslint-config-takiyon": "^0.3.1"
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-config-takiyon": "^0.4.0"
   }
 }
