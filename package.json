@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/takiyon-org/eslint-config-takiyon-react#readme",
   "peerDependencies": {
-    "eslint": "^6.7.1",
+    "eslint": "^7.22.0",
     "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-jsx-a11y": "^6.0.2",
     "eslint-plugin-react": "^7.1.0",
