@@ -4,6 +4,11 @@ module.exports = {
         'takiyon',
     ],
     rules: {
+        // Allow either `htmlFor` or a label encapsulating an input
+        'jsx-a11y/label-has-associated-control': ['error', {
+            assert: 'either',
+        }],
+
         // Allow `.js` files to have JSX
         'react/jsx-filename-extension': 'off',
 
