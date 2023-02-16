@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, { Component } from 'react';
 
-class ComponentTest extends React.Component {
-    // react/sort-prop-types'
+class ComponentTest extends Component {
+    // react/sort-prop-types
     static propTypes = {
         label: PropTypes.node.isRequired,
         options: PropTypes.arrayOf(PropTypes.shape({
@@ -17,7 +17,9 @@ class ComponentTest extends React.Component {
         disabled: false,
     };
 
-    state = { value: [] };
+    state = {
+        value: [],
+    };
 
     constructor(props) {
         super(props);
