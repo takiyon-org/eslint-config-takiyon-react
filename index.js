@@ -9,8 +9,11 @@ module.exports = {
             assert: 'either',
         }],
 
-        // Allow `.js` files to have JSX
-        'react/jsx-filename-extension': 'off',
+        // Force JSX files to have `.jsx` extension
+        'react/jsx-filename-extension': ['error', {
+            allow: 'as-needed',
+            extensions: ['jsx'],
+        }],
 
         // Two spaces are not enough for readability
         'react/jsx-indent': ['error', 4],
@@ -35,10 +38,10 @@ module.exports = {
             requiredFirst: true,
         }],
 
-        // Allow author initialize state in whatever manner they prefer
+        // Allow author to initialize state in whatever manner they prefer
         'react/state-in-constructor': 'off',
 
-        // Require static fields in React to be static methods in class
+        // Require static fields in React to be in class
         'react/static-property-placement': ['error', 'static public field'],
     },
 };
