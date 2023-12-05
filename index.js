@@ -32,6 +32,12 @@ module.exports = {
             reservedFirst: ['key'],
         }],
 
+        // Require default props to be arguments for functions
+        'react/require-default-props': ['error', {
+            forbidDefaultForRequired: true,
+            functions: 'defaultArguments',
+        }],
+
         // Alphabetical sort of prop types, with required props first
         'react/sort-prop-types': ['error', {
             callbacksLast: true,
