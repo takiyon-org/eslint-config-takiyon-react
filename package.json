@@ -46,6 +46,6 @@
   },
   "dependencies": {
     "eslint-config-airbnb": "^19.0.4",
-    "eslint-config-takiyon": "^3.0.1"
+    "eslint-config-takiyon": "^4.0.0"
   }
 }
