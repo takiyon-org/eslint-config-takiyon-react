@@ -23,11 +23,8 @@
   "homepage": "https://github.com/takiyon-org/eslint-config-takiyon-react#readme",
   "peerDependencies": {
     "@babel/core": "^8.0.1",
-    "@babel/eslint-parser": "^7.13.10",
-    "eslint": "^9.3.0",
-    "eslint-plugin-jsx-a11y": "^6.0.2",
-    "eslint-plugin-react": "^7.1.0",
-    "eslint-plugin-react-hooks": "^7.0.1"
+    "@babel/eslint-parser": "8.0.1",
+    "eslint": "^10.10.0"
   },
   "devDependencies": {
     "@babel/core": "^8.0.1",
@@ -35,15 +32,15 @@
     "@babel/preset-env": "^8.0.2",
     "@babel/preset-react": "^8.0.1",
     "eslint": "^10.10.0",
-    "eslint-plugin-jsx-a11y": "^6.0.2",
-    "eslint-plugin-react": "^7.1.0",
-    "eslint-plugin-react-hooks": "^7.0.1",
     "prop-types": "^15.8.1",
     "react": "^19.2.4"
   },
   "dependencies": {
     "@eslint/compat": "^2.1.1",
-    "eslint-config-takiyon": "^5.0.0"
+    "eslint-config-takiyon": "^5.0.0",
+    "eslint-plugin-jsx-a11y": "^6.0.2",
+    "eslint-plugin-react": "^7.1.0",
+    "eslint-plugin-react-hooks": "^7.0.1"
   },
   "overrides": {
     "eslint-plugin-jsx-a11y": {
