@@ -1,16 +1,64 @@
+import { createRequire } from 'node:module';
+import { fixupPluginRules } from '@eslint/compat';
 import { FlatCompat } from '@eslint/eslintrc';
 import takiyonConfig from 'eslint-config-takiyon';
 
 const compat = new FlatCompat();
+const require = createRequire(import.meta.url);
+
+/**
+ * Resolve the installed React version ourselves.
+ *
+ * eslint-config-airbnb sets `settings.react.version` to `'detect'`, which makes eslint-plugin-react
+ * call `context.getFilename()`. That method was removed in ESLint 10, so linting crashes.
+ * Returns `undefined` when React cannot be found, in which case the plugin assumes the latest version.
+ */
+function getReactVersion() {
+    try {
+        const reactPath = require.resolve('react/package.json', { paths: [process.cwd()] });
+
+        return require(reactPath).version;
+    } catch {
+        return undefined;
+    }
+}
+
+/**
+ * eslint-plugin-react 7.x still calls `context.getFilename()` and `context.getSourceCode()` in some rules
+ * (e.g. `jsx-filename-extension`), which were removed in ESLint 10. `fixupPluginRules` restores them.
+ * The plugin is registered by the airbnb config, so it is patched in place to avoid redefining it.
+ */
+const airbnbConfig = compat.extends(
+    'eslint-config-airbnb/rules/react',
+    'eslint-config-airbnb/rules/react-a11y',
+    'eslint-config-airbnb/rules/react-hooks',
+).map((config) => {
+    if (!config.plugins?.react) {
+        return config;
+    }
+
+    return {
+        ...config,
+        plugins: {
+            ...config.plugins,
+            react: fixupPluginRules(config.plugins.react),
+        },
+    };
+});
 
 export default [
-    ...compat.extends('eslint-config-airbnb'),
+    ...airbnbConfig,
     ...takiyonConfig,
     {
         files: [
             '**/*.{js,cjs,mjs,jsx}',
         ],
         ignores: ['./node_modules/**/*'],
+        settings: {
+            react: {
+                version: getReactVersion(),
+            },
+        },
         rules: {
             // Allow either `htmlFor` or a label encapsulating an input
             'jsx-a11y/label-has-associated-control': ['error', {
