@@ -3,6 +3,7 @@ import { fixupPluginRules } from '@eslint/compat';
 import { FlatCompat } from '@eslint/eslintrc';
 import takiyonConfig from 'eslint-config-takiyon';
 
+import a11y from './rules/a11y.js';
 import hooks from './rules/hooks.js';
 
 const compat = new FlatCompat();
@@ -32,7 +33,6 @@ function getReactVersion() {
  */
 const airbnbConfig = compat.extends(
     'eslint-config-airbnb/rules/react',
-    'eslint-config-airbnb/rules/react-a11y',
 ).map((config) => {
     if (!config.plugins?.react) {
         return config;
@@ -52,6 +52,7 @@ export default [
     ...takiyonConfig,
 
     // Shared rule layers (core linting)
+    a11y,
     hooks,
 
     {
@@ -65,11 +66,6 @@ export default [
             },
         },
         rules: {
-            // Allow either `htmlFor` or a label encapsulating an input
-            'jsx-a11y/label-has-associated-control': ['error', {
-                assert: 'either',
-            }],
-
             // Force JSX files to have `.jsx` extension
             'react/jsx-filename-extension': ['error', {
                 allow: 'as-needed',
