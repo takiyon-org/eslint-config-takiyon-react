@@ -3,6 +3,8 @@ import { fixupPluginRules } from '@eslint/compat';
 import { FlatCompat } from '@eslint/eslintrc';
 import takiyonConfig from 'eslint-config-takiyon';
 
+import hooks from './rules/hooks.js';
+
 const compat = new FlatCompat();
 const require = createRequire(import.meta.url);
 
@@ -31,7 +33,6 @@ function getReactVersion() {
 const airbnbConfig = compat.extends(
     'eslint-config-airbnb/rules/react',
     'eslint-config-airbnb/rules/react-a11y',
-    'eslint-config-airbnb/rules/react-hooks',
 ).map((config) => {
     if (!config.plugins?.react) {
         return config;
@@ -49,6 +50,10 @@ const airbnbConfig = compat.extends(
 export default [
     ...airbnbConfig,
     ...takiyonConfig,
+
+    // Shared rule layers (core linting)
+    hooks,
+
     {
         files: [
             '**/*.{js,cjs,mjs,jsx}',
