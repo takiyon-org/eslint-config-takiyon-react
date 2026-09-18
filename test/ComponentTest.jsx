@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import React, { useState, useCallback } from 'react';
+import { useState, useCallback } from 'react';
 
 // react/sort-prop-types
 const propTypes = {
