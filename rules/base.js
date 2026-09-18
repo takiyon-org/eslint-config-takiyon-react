@@ -6,8 +6,18 @@ export default {
 
     plugins: {
         // eslint-plugin-react 7.x still calls `context.getFilename()` and `context.getSourceCode()` in some rules
-        // (e.g. `jsx-filename-extension`), which were removed in ESLint 10. `fixupPluginRules` restores them.
+        // (e.g. `jsx-filename-extension`, and the `detect` React version lookup below), which were removed
+        // in ESLint 10. `fixupPluginRules` restores them.
         'react': fixupPluginRules(reactPlugin),
+    },
+
+    settings: {
+        react: {
+            // Resolve the installed React version relative to each linted file
+            // Without this, the plugin warns and assumes the latest React
+            // Depends on the `fixupPluginRules` shim above
+            version: 'detect',
+        },
     },
 
     // Originally adapted from eslint-config-airbnb
