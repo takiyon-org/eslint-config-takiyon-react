@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/takiyon-org/eslint-config-takiyon-react#readme",
   "peerDependencies": {
-    "@babel/core": "^7.13.10",
+    "@babel/core": "^8.0.1",
     "@babel/eslint-parser": "^7.13.10",
     "eslint": "^9.3.0",
     "eslint-plugin-import": "^2.7.0",
@@ -31,7 +31,7 @@
     "eslint-plugin-react-hooks": "^7.0.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.13.10",
+    "@babel/core": "^8.0.1",
     "@babel/eslint-parser": "^7.13.10",
     "@babel/preset-env": "^8.0.2",
     "@babel/preset-react": "^7.18.6",
