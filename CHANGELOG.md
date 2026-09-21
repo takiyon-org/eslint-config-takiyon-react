@@ -1,6 +1,6 @@
 # CHANGELOG
 
-## v8.0.1
+## [v8.0.1](https://github.com/takiyon-org/eslint-config-takiyon-react/compare/v8.0.0...v8.0.1) (2026-09-21)
 
 ### Bug Fixes
 
