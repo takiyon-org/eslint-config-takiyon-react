@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## v8.0.1
+
+### Bug Fixes
+
+* Fix resolution range of `@babel/eslint-parser` peer dependency
+
 ## [v8.0.0](https://github.com/takiyon-org/eslint-config-takiyon-react/compare/v7.0.0...v8.0.0) (2026-09-18)
 
 ### Breaking Changes

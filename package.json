@@ -23,7 +23,7 @@
   "homepage": "https://github.com/takiyon-org/eslint-config-takiyon-react#readme",
   "peerDependencies": {
     "@babel/core": "^8.0.1",
-    "@babel/eslint-parser": "8.0.1",
+    "@babel/eslint-parser": "^8.0.6",
     "eslint": "^10.10.0"
   },
   "devDependencies": {
